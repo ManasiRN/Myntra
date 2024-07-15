@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reels - Fashion Influencers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar">
+        <div id="logo">
+            <a href="index.html"><img src="https://images.indianexpress.com/2021/01/myntra.png" alt="logo"></a>
+        </div>
+        <div id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="reels.html">Reels</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <!-- Reels Section -->
+    <div id="reels-section">
+        <h1>Fashion Influencer Reels</h1>
+        <div id="upload-container">
+            <input type="file" id="upload-input" accept="video/*">
+            <button id="upload-button">Upload</button>
+        </div>
+        <div id="reels-container">
+            <div class="reel">
+                <video src="reel1.mp4" controls></video>
+                <div class="reel-info">
+                    <h2>@fashionista</h2>
+                    <div class="reel-interactions">
+                        <span class="material-icons">favorite</span> <span class="count">254</span>
+                        <span class="material-icons">comment</span> <span class="count">45</span>
+                    </div>
+                </div>
+                <div class="comments-section">
+                    <input type="text" placeholder="Add a comment">
+                    <button>Add</button>
+                    <div class="comments">
+                        <p><b>@user1:</b> Love this outfit!</p>
+                        <p><b>@user2:</b> Where can I buy this?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- More reels can be added here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <p>&copy; 2024 Fashion Influencers. All rights reserved.</p>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

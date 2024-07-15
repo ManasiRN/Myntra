@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f2;
+    color: #333;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ff99cc;
+}
+
+#navbar #logo img {
+    height: 50px;
+}
+
+#navbar #nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+#reels-section {
+    padding: 20px;
+}
+
+#reels-section h1 {
+    text-align: center;
+    color: #ff66b2;
+}
+
+#reels-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.reel {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.reel video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.reel-info {
+    margin-top: 10px;
+}
+
+.reel-info h2 {
+    margin: 5px 0;
+    color: #ff66b2;
+}
+
+.reel-interactions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.reel-interactions .material-icons {
+    cursor: pointer;
+    color: #ff66b2;
+    margin: 0 5px;
+}
+
+.reel-interactions .count {
+    margin-left: 5px;
+    color: #ff66b2;
+}
+
+.comments-section {
+    margin-top: 20px;
+}
+
+.comments-section input {
+    width: calc(100% - 50px);
+    padding: 10px;
+    border: 1px solid #ff66b2;
+    border-radius: 5px;
+}
+
+.comments-section button {
+    padding: 10px;
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comments {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.comments p {
+    background-color: #ffe6f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+#footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ff99cc;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

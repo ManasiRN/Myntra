@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Capture</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+</head>
+<body>
+    <style>
+        body {background-color: rgba(236, 106, 128, 0.87);}
+        h1 { color: white;} 
+    </style>
+     <h1 style="text-align: center;"><i class="fa-solid fa-camera"></i></h1>
+    <h1 style="text-align: center;">Myntra Lens</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="capture"><h2 style="text-align: center;"><i class="fa-solid fa-camera"></i></h2>Capture</button>
+   
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <div id="upload-container">
+        <input type="file" id="upload-input" accept="video/*">
+        <button id="upload-button">Upload</button>
+    </div>
+
+    <script>
+        // Access the camera
+        const video = document.getElementById('video');
+
+        // Get access to the camera!
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+                video.srcObject = stream;
+                video.play();
+            });
+        }
+
+        // Trigger photo capture
+        document.getElementById('capture').addEventListener('click', function() {
+            const canvas = document.getElementById('canvas');
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, 640, 480);
+            
+            // Convert canvas to image data
+            const dataURL = canvas.toDataURL('image/png');
+            
+            // Send image data to backend
+            fetch('/upload', {
+                method: 'POST',
+                body: JSON.stringify({ image: dataURL }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => response.json()).then(data => {
+                console.log(data);
+            });
+        });
+    </script>
+</body>
+</html>
